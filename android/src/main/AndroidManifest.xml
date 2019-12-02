@@ -1,0 +1,5 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+  package="com.air.flutter_scanner">
+    <!--这里需要加上权限！如果不加上下行权限代码，即使在example项目中AndroidManifest中加上权限，也是打不开相机的-->
+    <uses-permission android:name="android.permission.CAMERA"/>
+</manifest>
