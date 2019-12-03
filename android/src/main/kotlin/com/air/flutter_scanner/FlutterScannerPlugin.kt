@@ -1,6 +1,6 @@
 package com.air.flutter_scanner
 
-import androidx.annotation.NonNull;
+import androidx.annotation.NonNull
 import io.flutter.embedding.engine.plugins.FlutterPlugin
 import io.flutter.plugin.common.MethodCall
 import io.flutter.plugin.common.MethodChannel
@@ -36,8 +36,10 @@ public class FlutterScannerPlugin : FlutterPlugin, MethodCallHandler {
         fun registerWith(registrar: Registrar) {
             val channel = MethodChannel(registrar.messenger(), "flutter_scanner")
             channel.setMethodCallHandler(FlutterScannerPlugin())
-
-            registrar.platformViewRegistry().registerViewFactory("view_type_id_scanner_view",AndroidScannerViewFactory(registrar.messenger()));
+            /*
+            注册：自己定义PlatformView
+            */
+            registrar.platformViewRegistry().registerViewFactory("view_type_id_scanner_view", AndroidScannerViewFactory(registrar.messenger()));
         }
     }
 

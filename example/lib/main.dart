@@ -1,9 +1,5 @@
 import 'package:flutter/material.dart';
-import 'dart:async';
-
-import 'package:flutter/services.dart';
-import 'package:flutter_scanner/flutter_scanner.dart';
-import 'package:flutter_scanner/scanner_view.dart';
+import 'package:flutter_scanner/scanner_widget.dart';
 
 void main() => runApp(MyApp());
 
@@ -13,36 +9,28 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  String _platformVersion = 'Unknown';
-  String _test = 'Unknown';
+  String _qrCode = 'Unknown';
+  bool _grant = false;
+
+  ScannerController _platformScannerController;
 
   @override
   void initState() {
     super.initState();
-    initPlatformState();
+
+    _platformScannerController = ScannerController(
+      scannerResult: (String result) {
+        setState(() {
+          _qrCode = result;
+        });
+      },
+    );
   }
 
-  // Platform messages are asynchronous, so we initialize in an async method.
-  Future<void> initPlatformState() async {
-    String platformVersion;
-    String test;
-    // Platform messages may fail, so we use a try/catch PlatformException.
-    try {
-      platformVersion = await FlutterScanner.platformVersion;
-      test = await FlutterScanner.test;
-    } on PlatformException {
-      platformVersion = 'Failed to get platform version.';
-    }
-
-    // If the widget was removed from the tree while the asynchronous platform
-    // message was in flight, we want to discard the reply rather than calling
-    // setState to update our non-existent appearance.
-    if (!mounted) return;
-
-    setState(() {
-      _platformVersion = platformVersion;
-      _test = test;
-    });
+  @override
+  void dispose() {
+    super.dispose();
+    _platformScannerController = null;
   }
 
   @override
@@ -50,17 +38,60 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: const Text('Plugin example app'),
+          title: const Text('Scanner Plugin example app'),
         ),
         body: Center(
             child: Column(
           children: <Widget>[
-            Text('Running on: $_platformVersion\n'),
-            Text('Model on: $_test\n'),
+            Text('Result on: $_qrCode\n'),
+            Text('Grant on: $_grant\n'),
             Container(
               color: Colors.blue,
-              child: PlatformScannerWidget(),
-            )
+              width: 200,
+              height: 200,
+              child: PlatformScannerWidget(
+                platformScannerController: _platformScannerController,
+              ),
+            ),
+            MaterialButton(
+              onPressed: () {},
+              child: Text("申请权限"),
+            ),
+            MaterialButton(
+              color: Theme.of(context).primaryColor,
+              onPressed: () {
+                _platformScannerController.startCamera();
+              },
+              child: Text("打开相机"),
+            ),
+            MaterialButton(
+              color: Theme.of(context).primaryColor,
+              onPressed: () {
+                _platformScannerController.stopCamera();
+              },
+              child: Text("关闭相机"),
+            ),
+            MaterialButton(
+              color: Theme.of(context).primaryColor,
+              onPressed: () {
+                _platformScannerController.startCameraPreview();
+              },
+              child: Text("打开预览(只有打开预览后，才会识别)"),
+            ),
+            MaterialButton(
+              color: Theme.of(context).primaryColor,
+              onPressed: () {
+                _platformScannerController.stopCameraPreview();
+              },
+              child: Text("关闭预览"),
+            ),
+            MaterialButton(
+              color: Theme.of(context).primaryColor,
+              onPressed: () {
+                _platformScannerController.toggleFlash();
+              },
+              child: Text("切换手电筒"),
+            ),
           ],
         )),
       ),

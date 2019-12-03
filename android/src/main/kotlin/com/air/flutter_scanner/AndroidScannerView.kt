@@ -1,16 +1,9 @@
 package com.air.flutter_scanner
 
-import android.Manifest
 import android.content.Context
-import android.content.pm.PackageManager
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
-import android.view.ViewParent
 import android.widget.LinearLayout
 import android.widget.TextView
-import androidx.core.app.ActivityCompat
-import androidx.core.content.ContextCompat
 import com.google.zxing.Result
 import io.flutter.plugin.common.BinaryMessenger
 import io.flutter.plugin.common.EventChannel
@@ -131,29 +124,5 @@ class AndroidScannerView(binaryMessenger: BinaryMessenger, context: Context, vie
 
     private fun toggleFlash() {
         zxing.toggleFlash();
-    }
-}
-
-object PermissionUtil {
-
-    /**
-     * Check that all given permissions have been granted by verifying that each entry in the
-     * given array is of the value [PackageManager.PERMISSION_GRANTED].
-
-     * @see Activity.onRequestPermissionsResult
-     */
-    fun verifyPermissions(grantResults: IntArray): Boolean {
-        // At least one result must be checked.
-        if (grantResults.size < 1) {
-            return false
-        }
-
-        // Verify that each required permission has been granted, otherwise return false.
-        for (result in grantResults) {
-            if (result != PackageManager.PERMISSION_GRANTED) {
-                return false
-            }
-        }
-        return true
     }
 }

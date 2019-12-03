@@ -44,6 +44,4 @@ dependencies {
 
     //Scanner(https://github.com/dm77/barcodescanner)
     implementation 'me.dm7.barcodescanner:zxing:1.9.13'
-    //Permission(https://github.com/pdliuw/AndroidApp/tree/master/permission)
-    implementation 'com.github.pdliuw.AndroidApp:permission:v1.0.2'
 }
