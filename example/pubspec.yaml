@@ -1,4 +1,5 @@
 name: flutter_scanner_example
+version: 0.0.1
 description: Demonstrates how to use the flutter_scanner plugin.
 publish_to: 'none'
 
