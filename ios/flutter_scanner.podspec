@@ -15,6 +15,8 @@ A new qr canner Flutter plugin.
   s.source           = { :path => '.' }
   s.source_files = 'Classes/**/*'
   s.dependency 'Flutter'
+  # (https://github.com/mikebuss/MTBBarcodeScanner)
+  s.dependency 'MTBBarcodeScanner'
   s.platform = :ios, '8.0'
 
   # Flutter.framework does not contain a i386 slice. Only x86_64 simulators are supported.
