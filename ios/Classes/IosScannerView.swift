@@ -40,13 +40,13 @@ class IosScannerView:NSObject,FlutterPlatformView{
         label.text="Ios UILabel++"
         label.textColor = UIColor.green
         
-//        let button = UIButton();
-//        button.setTitle("title", for: UIControl.State.focused)
-//        let uiView = UIView();
-//        uiView.addSubview(label)
-//        uiView.addSubview(button)
+        let button = UIButton();
+        button.setTitle("title", for: UIControl.State.normal)
+        let uiView = UIView(frame: CGRect(x: 30, y: 30, width: 50, height: 50));
+        uiView.addSubview(label)
+        uiView.addSubview(button)
         
-        return label;
+        return uiView;
     }
     
     func initMethodChannel(){

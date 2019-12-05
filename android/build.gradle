@@ -1,3 +1,5 @@
+package android
+
 group 'com.air.flutter_scanner'
 version '1.0-SNAPSHOT'
 
@@ -31,7 +33,7 @@ android {
         main.java.srcDirs += 'src/main/kotlin'
     }
     defaultConfig {
-        minSdkVersion 21
+        minSdkVersion 16
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     lintOptions {

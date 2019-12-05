@@ -1,18 +1,12 @@
-import 'dart:async';
+library flutter_scanner;
 
+///
+/// Import
+import 'dart:async';
+import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-class FlutterScanner {
-  static const MethodChannel _channel =
-      const MethodChannel('flutter_scanner');
+///
+/// Part
+part 'src/scanner_widget.dart';
 
-  static Future<String> get platformVersion async {
-    final String version = await _channel.invokeMethod('getPlatformVersion');
-    return version;
-  }
-
-  static Future<String> get test async {
-    final String test = await _channel.invokeMethod('test');
-    return test;
-  }
-}
