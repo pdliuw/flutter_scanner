@@ -14,12 +14,23 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^0.1.2
 
+  # Flutter Scanner
+  flutter_scanner:
+    git:
+      url: https://github.com/pdliuw/flutter_scanner.git
+
+  # Flutter Route
+  flutter_route:
+    git:
+      url: https://github.com/pdliuw/flutter_route.git
+
+  # Flutter Permission.
+  permission_handler: '^4.0.0'
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
 
-  flutter_scanner:
-    path: ../
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

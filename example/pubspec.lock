@@ -69,12 +69,23 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
-  flutter_scanner:
-    dependency: "direct dev"
+  flutter_route:
+    dependency: "direct main"
     description:
-      path: ".."
-      relative: true
-    source: path
+      path: "."
+      ref: HEAD
+      resolved-ref: ee7368235ae9a824cc45407b64dac56d6e1c6826
+      url: "https://github.com/pdliuw/flutter_route.git"
+    source: git
+    version: "0.0.1"
+  flutter_scanner:
+    dependency: "direct main"
+    description:
+      path: "."
+      ref: HEAD
+      resolved-ref: "4d83fb5422c158e91e79cfb143155ff33ba889d1"
+      url: "https://github.com/pdliuw/flutter_scanner.git"
+    source: git
     version: "0.0.1"
   flutter_test:
     dependency: "direct dev"
@@ -116,6 +127,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.8.0+1"
+  permission_handler:
+    dependency: "direct main"
+    description:
+      name: permission_handler
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "4.0.0"
   petitparser:
     dependency: transitive
     description:
