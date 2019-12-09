@@ -1,5 +1,3 @@
-package android
-
 group 'com.air.flutter_scanner'
 version '1.0-SNAPSHOT'
 

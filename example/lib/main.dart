@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_scanner/scanner_widget.dart';
+import 'package:flutter_scanner/flutter_scanner.dart';
 
 void main() => runApp(MyApp());
 

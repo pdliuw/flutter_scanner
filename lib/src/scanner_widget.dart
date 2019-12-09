@@ -58,7 +58,6 @@ class _PlatformScannerWidgetState extends State<PlatformScannerWidget> {
         viewType: _viewId,
         onPlatformViewCreated: (int id) {
           widget._platformScannerController.scannerViewCreated();
-          print("onPlatformViewCreated");
         },
         creationParams: <String, dynamic>{},
         creationParamsCodec: StandardMessageCodec(),
@@ -66,7 +65,9 @@ class _PlatformScannerWidgetState extends State<PlatformScannerWidget> {
     } else if (targetPlatform == TargetPlatform.iOS) {
       return UiKitView(
         viewType: _viewId,
-        onPlatformViewCreated: (int id) {},
+        onPlatformViewCreated: (int id) {
+          widget._platformScannerController.scannerViewCreated();
+        },
         creationParams: <String, dynamic>{},
         creationParamsCodec: StandardMessageCodec(),
       );

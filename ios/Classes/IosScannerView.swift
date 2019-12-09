@@ -11,7 +11,7 @@ import MTBBarcodeScanner
 
 class IosScannerView:NSObject,FlutterPlatformView{
     
-    @IBOutlet var scannerView: UIView!
+    var scannerView: UIView!
     var scanner:MTBBarcodeScanner!
     var methodChannel:FlutterMethodChannel?;
     var flutterResult:FlutterResult?;
@@ -20,21 +20,24 @@ class IosScannerView:NSObject,FlutterPlatformView{
      Constructor.
      */
     init(binaryMessenger: FlutterBinaryMessenger) {
+        //Call parent init constructor.
+        super.init();
         self.binaryMessenger = binaryMessenger;
-        
+        /*
+         Method Channel
+         */
+        initMethodChannel();
         /*
          Scanner
          */
+        scannerView = UIView();
+        //        scannerView.frame(forAlignmentRect: CGRect.init(x: 0, y: 0, width: 100, height: 150))
         scanner = MTBBarcodeScanner(previewView: scannerView);
-        //Call parent init constructor.
-        super.init();
     }
     
     
     
     func view() -> UIView {
-        
-        initMethodChannel();
         
         let label = UILabel()
         label.text="Ios UILabel++"
@@ -42,11 +45,10 @@ class IosScannerView:NSObject,FlutterPlatformView{
         
         let button = UIButton();
         button.setTitle("title", for: UIControl.State.normal)
-        let uiView = UIView(frame: CGRect(x: 30, y: 30, width: 50, height: 50));
-        uiView.addSubview(label)
-        uiView.addSubview(button)
         
-        return uiView;
+        scannerView.addSubview(button);
+        scannerView.addSubview(label);
+        return scannerView;
     }
     
     func initMethodChannel(){
@@ -76,38 +78,35 @@ class IosScannerView:NSObject,FlutterPlatformView{
                 /*
                  预览相机
                  */
-                case "resumeCameraPreview":
-                    self.resumeCameraPreview();
+            case "resumeCameraPreview":
+                self.resumeCameraPreview();
                 break;
                 /*
                  停止预览
                  */
-                case "stopCameraPreview":
-                    self.stopCameraPreview();
-                break;
+            case "stopCameraPreview":
+                self.stopCameraPreview();
+                break;
                 /*
                  打开手电筒
                  */
-                case "openFlash":
-                    self.openFlash();
+            case "openFlash":
+                self.openFlash();
                 break;
                 /*
                  关闭手电筒
                  */
-                case "closeFlash":
-                    self.closeFlash();
+            case "closeFlash":
+                self.closeFlash();
                 break;
                 /*
                  切换手电筒
                  */
-                case "toggleFlash":
-                    self.toggleFlash();
+            case "toggleFlash":
+                self.toggleFlash();
                 break;
             default:
-                /*
-                 默认启动相机
-                 */
-                self.startCamera();
+                self.flutterResult?("method:\(call.method) not implement");
             }
         }
     }
@@ -115,41 +114,53 @@ class IosScannerView:NSObject,FlutterPlatformView{
     
     
     func startCamera(){
+        
+    }
+    func stopCamera(){
+        //        self.scanner?.stopScanning()
+    }
+    func resumeCameraPreview(){
+        if(self.scanner.isScanning()){
+            return;
+        }
         MTBBarcodeScanner.requestCameraPermission(success: { success in
             if success {
                 do {
-                    try self.scanner?.startScanning(resultBlock: { codes in
+                    try self.scanner.startScanning(resultBlock: { codes in
                         if let codes = codes {
                             for code in codes {
                                 let stringValue = code.stringValue!
-                                self.flutterResult?(stringValue);
+                                if(self.flutterResult != nil){
+                                    self.flutterResult?("\(stringValue)");
+                                }
+                                
                                 print("Found code: \(stringValue)")
                             }
                         }
                     })
                 } catch {
-                    NSLog("Unable to start scanning")
+                    NSLog("Unable to start scanning error:\(error)")
+                    self.flutterResult?("Unable to start scanning error:\(error)");
                 }
             } else {
+                self.flutterResult?("Unable to start scanning This app does not have permission to access the camera");
                 UIAlertView(title: "Scanning Unavailable", message: "This app does not have permission to access the camera", delegate: nil, cancelButtonTitle: nil, otherButtonTitles: "Ok").show()
             }
         })
     }
-    func stopCamera(){
-        self.scanner?.stopScanning()
-    }
-    func resumeCameraPreview(){
-        
-    }
     
     func stopCameraPreview(){
+        if(self.scanner.isScanning()){
+            self.scanner.stopScanning()
+            
+        }
         
     }
     func openFlash(){
-//        scannerView?.setTorchMode(MTBTorchMode.on, error: NSNull)
+        //        scanner?.setTorchMode(MTBTorchMode.on)
     }
     func closeFlash(){
-//        scannerView?.setTorchMode(MTBTorchMode.off, error: NSNull)
+        //        scanner?.setTorchMode(MTBTorchMode.off)
     }
     func toggleFlash(){
         scanner?.toggleTorch();
