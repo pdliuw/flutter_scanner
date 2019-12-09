@@ -72,87 +72,70 @@ import 'package:flutter_scanner/flutter_scanner.dart';
 
 完整示例
 
-[完整示例,点击这里]()
+[完整示例,点击这里](https://github.com/pdliuw/flutter_scanner/blob/master/example/lib/task_scanner_page.dart)
 
-```
-全局静态路由配置：
-void main() {
-
-  runApp(
-    MaterialApp(
-      home: Scaffold(
-        body: LaunchPage(),
-      ),
-
-      ///全局静态路由的配置！
-      ///路由名称前要加"/"来标记路由名！
-      routes: RouteManager.initializeRoutes(
-        routes: <String, WidgetBuilder>{
-          "/LaunchPage": (BuildContext context) => LaunchPage(),
-        },
-      ),
-    ),
-  );
-}
-
-
-```
 
 ### 2.调用/应用
 
-*1、跳转新页面
+*1、打开相机设备
 
 ```
 
-RouteManager.getInstance().pushNamed("/routeName");
+          _scannerController.startCamera();
 
 ```
-*2、跳转新页面，并添加动画
-
-```
-
-                RouteManager.getInstance().pushNamedWithAnimation(routeName: "/routeName", routePageAnimation: (
-                    BuildContext context,
-                    Animation<double> animation,
-                    Animation<double> secondaryAnimation,
-                    Widget page) {
-                  return SlideTransition(
-                    position: Tween<Offset>(
-                      begin: const Offset(1.0, 0.0),
-                      end: const Offset(0.0, 0.0),
-                    ).animate(animation),
-                    child: page,
-                  );
-                });
+*2、打开预览/识别'条码'
 
 ```
 
-*3、跳转新页面，并关闭当前页面
+          _scannerController.startCameraPreview();
 
 ```
 
-                RouteManager.getInstance().pushReplacementNamed("/routeName");
+*3、关闭预览/识别'条码'
+
+```
+
+      _scannerController.stopCameraPreview();
 
 ```
 
 
-*4、跳转新页面，并关闭之前的所有页面
+*4、关闭相机设备
 
 ```
 
-RouteManager.getInstance().pushNamedAndRemoveUntil(
-          newRouteName: "/routeName",
-        );
+      _scannerController.stopCamera();
 
 ```
 
-*5、关闭当前页面
+*5、打开手电筒
 
 ```
 
-                RouteManager.getInstance().pop();
+      _scannerController.openFlash();
 
 ```
+
+*5、关闭手电筒
+
+```
+
+      _scannerController.closeFlash();
+
+```
+
+*5、切换手电筒
+
+```
+
+      _scannerController.toggleFlash();
+
+```
+
+
+看到这里还意犹未尽？[点击，查看项目示例](https://github.com/pdliuw/flutter_scanner/tree/master/example/lib)
+
 
 ## LICENSE
 
