@@ -6,6 +6,9 @@ flutter_scanner:支持Android和IOS识别'一维条码'和'二维条码'的识�
 
 亮点: ``flutter_scanner:支持在flutter页面中嵌入Scanner以此来应对多变的业务需求``
 
+|![效果](https://github.com/pdliuw/flutter_scanner/blob/master/example/gif/flutter_scanner_android.gif)|![效果](https://github.com/pdliuw/flutter_scanner/blob/master/example/gif/flutter_scanner_ios.gif)|
+|:-|:-|
+
 [flutter_scanner](https://github.com/pdliuw/flutter_scanner) 在[项目](https://github.com/flutter-app-sample/flutter_app_sample)中的实战应用[flutter sample](https://github.com/flutter-app-sample/flutter_app_sample)
 
 |[下载安卓apk安装包](https://github.com/pdliuw/Flutter_Resource/blob/master/resource/flutter/apk/flutter_scanner.apk?raw=true)|[IOS安装包，请下载example后运行项目获取]()|[博客地址](https://pdliuw.github.io/)|
