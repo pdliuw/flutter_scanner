@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'dart:ui';
 
-import 'package:flutter_route/flutter_route.dart';
+import 'package:airoute/airoute.dart';
 
 ///
 /// TaskNextPage
@@ -66,7 +66,7 @@ class _TaskNextState extends State<TaskNextPage> {
                     actions: <Widget>[
                       CupertinoDialogAction(
                         onPressed: () {
-                          RouteManager.getInstance().pop();
+                          Airoute.pop();
                         },
                         child: Text("知道了"),
                       ),

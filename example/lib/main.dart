@@ -1,23 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_route/flutter_route.dart';
+import 'package:airoute/airoute.dart';
 import 'package:flutter_scanner_example/task_next_page.dart';
 import 'package:flutter_scanner_example/task_scanner_page.dart';
 
 void main() => runApp(
-      MaterialApp(
-        home: Scaffold(
-          body: App(),
-        ),
-        //routes
-        routes: RouteManager.initializeRoutes(
-          routes: <String, WidgetBuilder>{
-            "/TaskScannerPage": (BuildContext context) => TaskScannerPage(),
-            "/TaskNextPage": (BuildContext context) => TaskNextPage(),
-          },
-        ),
-        navigatorObservers: [
-          RouteManager.getInstance(),
-        ],
+      Airoute.createMaterialApp(
+        home: App(),
+        routes: <String, AirouteBuilder>{
+          "/TaskScannerPage": () => TaskScannerPage(),
+          "/TaskNextPage": () => TaskNextPage(),
+        },
       ),
     );
 
@@ -45,7 +37,9 @@ class _AppState extends State<App> {
             /*
               跳转页面
                */
-            RouteManager.getInstance().pushNamed("/TaskScannerPage");
+            Airoute.pushNamed(
+              routeName: "/TaskScannerPage",
+            );
           },
           textColor: Colors.white,
           color: Colors.blue,

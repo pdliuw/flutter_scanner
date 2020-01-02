@@ -1,12 +1,13 @@
 name: flutter_scanner
 description: A new qr canner Flutter plugin.
-version: 0.0.1
-author: "Air/pdliuw <xkrossiapd163@163.com>"
+version: 0.1.1
 homepage: https://pdliuw.github.io/
 repository: https://github.com/pdliuw/flutter_scanner
 
 environment:
   sdk: ">=2.1.0 <3.0.0"
+  # Flutter versions prior to 1.10 did not support the flutter.plugin.platforms map.
+  flutter: ">=1.10.0 <2.0.0"
 
 dependencies:
   flutter:
@@ -26,8 +27,12 @@ flutter:
   # be modified. They are used by the tooling to maintain consistency when
   # adding or updating assets for this project.
   plugin:
-    androidPackage: com.air.flutter_scanner
-    pluginClass: FlutterScannerPlugin
+    platforms:
+      android:
+        package: com.air.flutter_scanner
+        pluginClass: FlutterScannerPlugin
+      ios:
+        pluginClass: FlutterScannerPlugin
 
   # To add assets to your plugin package, add an assets section, like this:
   # assets:

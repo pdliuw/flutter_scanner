@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_scanner/flutter_scanner.dart';
-import 'package:flutter_route/flutter_route.dart';
+import 'package:airoute/airoute.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'dart:ui';
@@ -426,7 +426,9 @@ class _TaskScannerPageState extends State<TaskScannerPage>
                     /*
                   页面跳转
                    */
-                    RouteManager.getInstance().pushNamed("/TaskNextPage");
+                    Airoute.pushNamed(
+                      routeName: "/TaskNextPage",
+                    );
                   },
                   child: Text("跳转页面"),
                 ),

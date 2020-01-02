@@ -20,9 +20,9 @@ dependencies:
       url: https://github.com/pdliuw/flutter_scanner.git
 
   # Flutter Route
-  flutter_route:
+  airoute:
     git:
-      url: https://github.com/pdliuw/flutter_route.git
+      url: https://github.com/pdliuw/airoute.git
 
   # Flutter Permission.
   permission_handler: '^4.0.0'
