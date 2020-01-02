@@ -3,9 +3,11 @@
 ![totem](https://raw.githubusercontent.com/pdliuw/pdliuw.github.io/master/images/totem_four_logo.jpg)
 
 
-亮点: ``flutter_scanner:支持无需context的路由操作.``
+flutter_scanner:支持Android和IOS识别'一维条码'和'二维条码'的识别
 
-[flutter_scanner](https://github.com/pdliuw/flutter_route) 在[项目](https://github.com/flutter-app-sample/flutter_app_sample)中的实战应用[flutter sample](https://github.com/flutter-app-sample/flutter_app_sample)
+[![pub package](https://img.shields.io/pub/v/flutter_scanner.svg)](https://pub.dev/packages/flutter_scanner)
+
+[flutter_scanner](https://github.com/pdliuw/flutter_scanner) 在[项目](https://github.com/flutter-app-sample/flutter_app_sample)中的实战应用[flutter sample](https://github.com/flutter-app-sample/flutter_app_sample)
 
 ## 1.安装
 
@@ -15,12 +17,22 @@
 
 在文件 'pubspec.yaml' 中添加
 
+[![pub package](https://img.shields.io/pub/v/flutter_scanner.svg)](https://pub.dev/packages/flutter_scanner)
+
+```
+
+dependencies:
+
+  flutter_scanner: ^version
+
+```
+ 
 ```
 
   # Route package.
-  flutter_route:
+  flutter_scanner:
     git:
-      url: https://github.com/pdliuw/flutter_route.git
+      url: https://github.com/pdliuw/flutter_scanner.git
 
 ```
 
