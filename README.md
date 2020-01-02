@@ -4,7 +4,7 @@
 
 flutter_scanner:支持Android和IOS识别'一维条码'和'二维条码'的识别
 
-[![pub package](https://img.shields.io/pub/v/airoute.svg)](https://pub.dev/packages/airoute)
+[![pub package](https://img.shields.io/pub/v/flutter_scanner.svg)](https://pub.dev/packages/flutter_scanner)
 
 亮点: ``flutter_scanner:支持在flutter页面中嵌入Scanner以此来应对多变的业务需求``
 
