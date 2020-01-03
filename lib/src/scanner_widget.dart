@@ -2,6 +2,7 @@ part of flutter_scanner;
 
 ///
 /// PlatformScannerWidget
+// ignore: must_be_immutable
 class PlatformScannerWidget extends StatefulWidget {
   ///
   ///Controller.
@@ -27,7 +28,7 @@ class _PlatformScannerWidgetState extends State<PlatformScannerWidget> {
   /// id
   String _viewId = "view_type_id_scanner_view";
 
-  StreamSubscription _streamSubscription;
+//  StreamSubscription _streamSubscription;
 
   @override
   void initState() {
@@ -84,8 +85,8 @@ class ScannerController {
   /// Channel
   MethodChannel _methodChannel =
       MethodChannel("view_type_id_scanner_view_method_channel");
-  EventChannel _eventChannel =
-      EventChannel("view_type_id_scanner_view_event_channel");
+//  EventChannel _eventChannel =
+//      EventChannel("view_type_id_scanner_view_event_channel");
 
   ///
   /// Result
