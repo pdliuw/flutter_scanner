@@ -26,10 +26,13 @@ dependencies:
   flutter_scanner: ^version
 
 ```
- 
-```
 
-  # Route package.
+或者以下方式依赖
+
+```
+dependencies:
+
+  # Scanner package.
   flutter_scanner:
     git:
       url: https://github.com/pdliuw/flutter_scanner.git
