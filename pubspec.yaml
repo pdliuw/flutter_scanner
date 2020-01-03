@@ -1,6 +1,6 @@
 name: flutter_scanner
 description: Android and IOS recognize the "one-dimensional bar code" and "two-dimensional bar code", and support the Scanner embedded in Flutter pages to meet changing business needs
-version: 0.1.4
+version: 0.1.5
 homepage: https://pdliuw.github.io/
 repository: https://github.com/pdliuw/flutter_scanner
 
