@@ -15,9 +15,8 @@ dependencies:
   cupertino_icons: ^0.1.2
 
   # Flutter Scanner
-  flutter_scanner:
-    git:
-      url: https://github.com/pdliuw/flutter_scanner.git
+  ai_barcode:
+    path: ../
 
   # Flutter Route
   airoute:

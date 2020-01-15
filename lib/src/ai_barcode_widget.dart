@@ -3,14 +3,14 @@ part of flutter_scanner;
 ///
 /// PlatformScannerWidget
 // ignore: must_be_immutable
-class PlatformScannerWidget extends StatefulWidget {
+class PlatformAiBarcodeScannerWidget extends StatefulWidget {
   ///
   ///Controller.
   ScannerController _platformScannerController;
 
   ///
   /// Constructor.
-  PlatformScannerWidget(
+  PlatformAiBarcodeScannerWidget(
       {@required ScannerController platformScannerController}) {
     this._platformScannerController = platformScannerController;
   }
@@ -23,7 +23,7 @@ class PlatformScannerWidget extends StatefulWidget {
 
 ///
 /// _PlatformScannerWidgetState
-class _PlatformScannerWidgetState extends State<PlatformScannerWidget> {
+class _PlatformScannerWidgetState extends State<PlatformAiBarcodeScannerWidget> {
   ///
   /// id
   String _viewId = "view_type_id_scanner_view";

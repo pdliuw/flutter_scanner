@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_scanner/flutter_scanner.dart';
+import 'package:ai_barcode/ai_barcode.dart';
 import 'package:airoute/airoute.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:permission_handler/permission_handler.dart';
@@ -356,7 +356,7 @@ class _TaskScannerPageState extends State<TaskScannerPage>
                   color: Colors.black26,
                   width: cameraWidth,
                   height: cameraHeight,
-                  child: PlatformScannerWidget(
+                  child: PlatformAiBarcodeScannerWidget(
                     platformScannerController: _scannerController,
                   ),
                 ),

@@ -1,12 +1,11 @@
-## [0.0.1]
+## [0.2.6]
 
-* Initial release.
+* replace flutter_scanner with ai_barcode
 
-## [0.1.1]
+## [0.1.5]
 
-* barcode scanner supported!
-
-## [0.1.2]
+* Fix:something.
+## [0.1.4]
 
 * Fix:something.
 
@@ -14,10 +13,14 @@
 
 * Fix:something.
 
-## [0.1.4]
+## [0.1.2]
 
 * Fix:something.
 
-## [0.1.5]
+## [0.1.1]
 
-* Fix:something.
+* barcode scanner supported!
+
+## [0.0.1]
+
+* Initial release.
