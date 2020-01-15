@@ -1,4 +1,4 @@
-library flutter_scanner;
+library ai_barcode;
 
 ///
 /// Import

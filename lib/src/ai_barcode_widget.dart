@@ -1,4 +1,4 @@
-part of flutter_scanner;
+part of ai_barcode;
 
 ///
 /// PlatformScannerWidget
@@ -23,7 +23,8 @@ class PlatformAiBarcodeScannerWidget extends StatefulWidget {
 
 ///
 /// _PlatformScannerWidgetState
-class _PlatformScannerWidgetState extends State<PlatformAiBarcodeScannerWidget> {
+class _PlatformScannerWidgetState
+    extends State<PlatformAiBarcodeScannerWidget> {
   ///
   /// id
   String _viewId = "view_type_id_scanner_view";

@@ -15,8 +15,7 @@ dependencies:
   cupertino_icons: ^0.1.2
 
   # Flutter Scanner
-  ai_barcode:
-    path: ../
+  ai_barcode: 0.2.6
 
   # Flutter Route
   airoute:

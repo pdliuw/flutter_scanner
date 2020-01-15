@@ -132,7 +132,7 @@ class _TaskScannerPageState extends State<TaskScannerPage>
             CupertinoDialogAction(
               onPressed: () {
                 _startCameraPreviewWithPermissionCheck();
-                RouteManager.getInstance().pop();
+                Airoute.pop();
               },
               child: Text("知道了"),
             ),
@@ -168,7 +168,7 @@ class _TaskScannerPageState extends State<TaskScannerPage>
             actions: <Widget>[
               CupertinoDialogAction(
                 onPressed: () {
-                  RouteManager.getInstance().pop();
+                  Airoute.pop();
 
                   /*
                   权限申请
@@ -180,7 +180,7 @@ class _TaskScannerPageState extends State<TaskScannerPage>
               CupertinoDialogAction(
                 onPressed: () {
                   //拒绝将无法使用二维码功能
-                  RouteManager.getInstance().pop();
+                  Airoute.pop();
                   _showRequestPermissionSecondVerify();
                 },
                 child: Text("拒绝"),
@@ -202,7 +202,7 @@ class _TaskScannerPageState extends State<TaskScannerPage>
           actions: <Widget>[
             CupertinoDialogAction(
               onPressed: () {
-                RouteManager.getInstance().pop();
+                Airoute.pop();
                 /*
                 权限申请
                 */
@@ -213,7 +213,7 @@ class _TaskScannerPageState extends State<TaskScannerPage>
             CupertinoDialogAction(
               onPressed: () {
                 //拒绝将无法使用二维码功能
-                RouteManager.getInstance().pop();
+                Airoute.pop();
               },
               child: Text("拒绝"),
             ),
@@ -244,7 +244,7 @@ class _TaskScannerPageState extends State<TaskScannerPage>
               CupertinoDialogAction(
                 child: Text("知道了"),
                 onPressed: () {
-                  RouteManager.getInstance().pop();
+                  Airoute.pop();
                 },
               )
             ],
@@ -275,7 +275,7 @@ class _TaskScannerPageState extends State<TaskScannerPage>
   ///
   /// 退出当前页面时
   _pop() {
-    RouteManager.getInstance().pop();
+    Airoute.pop();
   }
 
   _startCameraPreviewWithPermissionCheck() {
@@ -310,7 +310,7 @@ class _TaskScannerPageState extends State<TaskScannerPage>
               CupertinoDialogAction(
                 child: Text("知道了"),
                 onPressed: () {
-                  RouteManager.getInstance().pop();
+                  Airoute.pop();
                 },
               ),
             ],
