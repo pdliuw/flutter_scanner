@@ -1,3 +1,7 @@
+## [0.2.7]
+
+* update 'example'
+
 ## [0.2.6]
 
 * replace flutter_scanner with ai_barcode
@@ -5,6 +9,7 @@
 ## [0.1.5]
 
 * Fix:something.
+
 ## [0.1.4]
 
 * Fix:something.
