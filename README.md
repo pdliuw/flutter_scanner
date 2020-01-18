@@ -156,6 +156,10 @@ import 'package:ai_barcode/ai_barcode.dart';
 
 看到这里还意犹未尽？[点击，查看项目示例](https://github.com/pdliuw/ai_barcode/tree/master/example/lib)
 
+## 待办
+
+* 支持：生成条码
+
 
 ## LICENSE
 
